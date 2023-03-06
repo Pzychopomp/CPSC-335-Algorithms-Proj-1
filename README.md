@@ -5,6 +5,7 @@ David Nguyen (dnguyen271@csu.fullerton.edu)
 Vivian Truong(18vtruong@csu.fullerton.edu)
 
 Lawnmowers Algorithm Pseudocode:
+
 a[] // a random given array
 n = a.size()
 for i = 1 to n-1 do:  // move from left to right
