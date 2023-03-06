@@ -1,10 +1,10 @@
 # CPSC--335-Algorithms
 
-##Members:
-##David Nguyen (dnguyen271@csu.fullerton.edu)
-##Vivian Truong(18vtruong@csu.fullerton.edu)
+## Members:
+## David Nguyen (dnguyen271@csu.fullerton.edu)
+## Vivian Truong(18vtruong@csu.fullerton.edu)
 
-##Lawnmowers Algorithm Pseudocode:
+## Lawnmowers Algorithm Pseudocode:
     
     a[] // a random given array
     n = a.size()
