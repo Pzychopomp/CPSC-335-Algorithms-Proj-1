@@ -27,3 +27,4 @@
             do nothing;
         else if (a[i] == black && a[i+1] != black):
             swap;
+            i += 1;
