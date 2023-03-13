@@ -19,3 +19,6 @@
              do nothing;
 
 ## Alternate Algorithm Pseudocode:
+
+    a[] // a random given array
+    n = a.size()
