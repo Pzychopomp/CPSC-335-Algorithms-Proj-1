@@ -12,6 +12,7 @@
             do nothing;
         else if (a[i] == black && a[i+1] != black):
             swap;
+            
     for j = n-1 down to 1 do:  // move from right to left
         if(a[j] == white && a[j-1] != white): // check for swappable elements
              swap;
@@ -28,6 +29,7 @@
         else if (a[i] == black && a[i-1] != black):
             swap;
         i += 1 // adds 1 in addition to regular increment making it skip a pair
+        
     for i = 2 to n-2 do: // check the secondleft to secondright disc
         if(a[i] == white && a[i-1] != white): // check for swappable elements
             do nothing;
