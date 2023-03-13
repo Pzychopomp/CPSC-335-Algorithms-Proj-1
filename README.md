@@ -17,3 +17,5 @@
              swap;
         else if (a[j] == black && a[j-1] != black):
              do nothing;
+
+## Alternate Algorithm Pseudocode:
