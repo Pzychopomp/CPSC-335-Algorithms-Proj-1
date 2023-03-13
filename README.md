@@ -22,3 +22,8 @@
 
     a[] // a random given array
     n = a.size()
+    for i = 1 to n-1 do:  // move from left to right
+        if(a[i] == white && a[i+1] != white): // check for swappable elements
+            do nothing;
+        else if (a[i] == black && a[i+1] != black):
+            swap;
