@@ -22,9 +22,7 @@
     for i = 1 to n-1 do:  // move from left to right
         else if (a[i] == black && a[i+1] != black): // check for swappable elements
             swap;
-        i += 1 // adds 1 in addition to regular increment making it skip a pair
         
     for i = 2 to n-2 do: // check the secondleft to secondright disc
         else if (a[i] == black && a[i+1] != black): // check for swappable elements
             swap;
-        i += 1 //adds 1 in addition to regular increment making it skip a pair
