@@ -8,16 +8,12 @@
     a[] // a random given array
     n = a.size()
     for i = 1 to n-1 do:  // move from left to right
-        if(a[i] == white && a[i+1] != white): // check for swappable elements
-            do nothing;
-        else if (a[i] == black && a[i+1] != black):
+        if (a[i] == black && a[i+1] == white): // check for swappable elements
             swap;
             
     for j = n-1 down to 1 do:  // move from right to left
-        if(a[j] == white && a[j-1] != white): // check for swappable elements
+        if(a[j] == white && a[j-1] == black): // check for swappable elements
              swap;
-        else if (a[j] == black && a[j-1] != black):
-             do nothing;
 
 ## Alternate Algorithm Pseudocode:
 
