@@ -9,11 +9,11 @@
     n = a.size()
     for j = 0 to n/2 do: // make sure it runs n/2 times
        for i = 1 to n-1 do: // move from left to right
-           if (a[i] == black && a[i+1] == white): // check for swappable elements
+           if (a[i] == black && a[i+1] != black): // check for swappable elements
                swap;
             
        for j = n-1 down to 1 do:  // move from right to left
-           if(a[j] == white && a[j-1] == black): // check for swappable elements
+           if(a[j] == white && a[j-1] != white): // check for swappable elements
                 swap;
 
 ## Alternate Algorithm Pseudocode:
