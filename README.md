@@ -20,7 +20,8 @@
 
     a[] // a random given array
     n = a.size()
-    while(unsorted) do:
+    bool sorted
+    while(!sorted) do:
        for i = 1 to n-1 do:  // move from left to right
            else if (a[i] == black && a[i+1] != black): // check for swappable elements
                swap;
