@@ -112,8 +112,13 @@ public:
   // Return true when this disk_state is fully sorted, with all light disks on
   // the left (low indices) and all dark disks on the right (high indices).
   bool is_sorted() const {
-      
-      return true;
+    for(size_t i = 0; i < light_count(); i++){
+        if(get(i) != DISK_LIGHT) return false;
+    }
+    for(size_t i = light_count(); i < total_count(); i++){
+        if(get(i) != DISK_DARK) return false;
+    }
+    return true;
   }
 };
 
@@ -144,18 +149,56 @@ public:
 
 // Algorithm that sorts disks using the alternate algorithm.
 sorted_disks sort_alternate(const disk_state& before) {
-	int numOfSwap = 0;                                                                      //record # of step swap
- 
-          }
+	int numOfSwap = 0;
+    disk_state state = before;
+    size_t n = state.total_count();
+    bool sorted = false; //helps with tracking inner loops
 
+    while (!sorted) { // used to keep our loop alternating
+        sorted = true; //if no swaps were made in both loops, exit
+        for (size_t i = 0; i < n - 1; i += 2) {
+            if (state.get(i) == DISK_DARK && state.get(i + 1) == DISK_LIGHT) {
+                state.swap(i);
+                numOfSwap++;
+                sorted = false;
+            }
+        }
+        for (size_t i = 1; i < n - 1; i += 2) {
+            if (state.get(i) == DISK_DARK && state.get(i + 1) == DISK_LIGHT) {
+                state.swap(i);
+                numOfSwap++;
+                sorted = false;
+            }
+        }
+        n -= 2; // exlcudes the outer sorted disk at each end
+    }
+  //std::cout <<numOfSwap; IGNORE USED TO DEBUG
   return sorted_disks(disk_state(state), numOfSwap);
 }
 
 
 // Algorithm that sorts disks using the lawnmower algorithm.
 sorted_disks sort_lawnmower(const disk_state& before) {
-  	
-	  }
+  int numOfSwap = 0; //record # of step swap
+  disk_state state = before;
+  const size_t n = state.total_count();
 
+  for (size_t j = 0; j < n/2; j++) {  //makes sure it runs n/2 times
+    for (size_t i = j; i < n-j-1; i++) { //n-j-1 is used to find the current disk
+                                        // total disk - current - 1 since starting at 0
+      if (state.get(i) == DISK_DARK && state.get(i+1) == DISK_LIGHT) {
+        state.swap(i);
+        numOfSwap++;
+      }
+    }
+
+    for (size_t i = n-j-2; i > j; i--) {
+      if (state.get(i) == DISK_LIGHT && state.get(i-1) == DISK_DARK) {
+        state.swap(i-1);
+        numOfSwap++;
+      }
+    }
+  }
+  //std::cout <<numOfSwap; IGNORE USED TO DEBUG
   return sorted_disks(disk_state(state), numOfSwap);
 }
